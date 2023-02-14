@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js help"
+    "start": "node index.js",
+    "add": "node index.js add"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   "homepage": "https://github.com/timothyrusso/todo-cli#readme",
   "dependencies": {
     "boxen": "^7.0.1",
-    "cfonts": "^3.1.1",
+    "gradient-string": "^2.0.2",
     "picocolors": "^1.0.0"
   }
 }

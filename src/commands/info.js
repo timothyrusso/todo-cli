@@ -1,27 +1,29 @@
-const InfoFunction = () => {
-    const UsageText = `
-        USAGE :
+import boxen from "boxen";
+import pc from "picocolors";
+import gradient from "gradient-string";
 
-        ### Add a new todo
+export const infoFunction = () => {
+    const UsageText = `
+    ${pc.bold(gradient.pastel('---USAGE---'))}
+
+        ${pc.blue('### Add a new todo')}
         $ node index.js add "todo item"
 
-        ### Show remaining todos
+        ${pc.green('### Show remaining todos')}
         $ node index.js ls
 
-        ### Delete a todo
+        ${pc.red('### Delete a todo')}
         $ node index.js del NUMBER
 
-        ### Complete a todo
+        ${pc.magenta('### Complete a todo')}
         $ node index.js done NUMBER
 
-        ### Show usage
-        $ node index.js help
+        ${pc.yellow('### Show usage')}
+        $ npm run start
 
-        ### Statistics
+        ${pc.cyan('### Statistics')}
         $ node index.js report
         `;
 
-    console.log(UsageText);
+    console.log(boxen(UsageText, {padding: 0, borderStyle: 'round', width: 40, textAlignment: 'center', margin: 1}));
 };
-
-export default InfoFunction;
