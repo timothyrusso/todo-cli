@@ -1,5 +1,5 @@
 // Requiring module
-const fs = require('fs');
+import * as fs from 'fs';
 
 // Accessing arguments
 const args = process.argv;
