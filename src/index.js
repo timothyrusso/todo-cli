@@ -2,7 +2,11 @@
 
 // Requiring module
 import * as fs from 'fs';
-import chalk from 'chalk';
+import cfonts from 'cfonts';
+import boxen from 'boxen';
+import pc from "picocolors"
+
+import InfoFunction from './commands/info.js';
 
 // Accessing arguments
 const args = process.argv;
@@ -20,31 +24,7 @@ if (fs.existsSync(currentWorkingDirectory + 'done.txt') === false) {
     createStream.end();
 }
 
-const InfoFunction = () => {
-    const UsageText = `
-        USAGE :
 
-        ### Add a new todo
-        $ node index.js add "todo item"
-
-        ### Show remaining todos
-        $ node index.js ls
-
-        ### Delete a todo
-        $ node index.js del NUMBER
-
-        ### Complete a todo
-        $ node index.js done NUMBER
-
-        ### Show usage
-        $ node index.js help
-
-        ### Statistics
-        $ node index.js report
-        `;
-
-    console.log(UsageText);
-};
 
 const listFunction = () => {
 
@@ -64,6 +44,7 @@ const listFunction = () => {
     let filterData = data.filter(function (value) {
         return value !== '';
     });
+
     let pendingTodos = chalk.green(`
     There are no pending todos!
     `)
