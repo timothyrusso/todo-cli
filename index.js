@@ -2,6 +2,7 @@
 
 // Requiring module
 import * as fs from 'fs';
+import chalk from 'chalk';
 
 // Accessing arguments
 const args = process.argv;
@@ -63,9 +64,12 @@ const listFunction = () => {
     let filterData = data.filter(function (value) {
         return value !== '';
     });
+    let pendingTodos = chalk.green(`
+    There are no pending todos!
+    `)
 
     if (filterData.length === 0) {
-        console.log('There are no pending todos!');
+        console.log(pendingTodos);
     }
 
     for (let i = 0; i < filterData.length; i++) {

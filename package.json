@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/timothyrusso/todo-cli/issues"
   },
-  "homepage": "https://github.com/timothyrusso/todo-cli#readme"
+  "homepage": "https://github.com/timothyrusso/todo-cli#readme",
+  "dependencies": {
+    "chalk": "^5.2.0"
+  }
 }
