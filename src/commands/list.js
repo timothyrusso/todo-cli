@@ -1,3 +1,5 @@
+import { currentWorkingDirectory } from "../../index.js";
+
 export const listFunction = () => {
 
     // Create a empty array

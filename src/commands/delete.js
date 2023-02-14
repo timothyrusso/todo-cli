@@ -1,3 +1,7 @@
+import { args } from "../../index.js";
+import * as fs from 'fs';
+import { currentWorkingDirectory } from "../../index.js";
+
 export const deleteFunction = () => {
 
     // Store which index is passed

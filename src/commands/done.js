@@ -1,3 +1,7 @@
+import { args } from "../../index.js";
+import * as fs from 'fs';
+import { currentWorkingDirectory } from "../../index.js";
+
 export const doneFunction = () => {
 
     // Store the index passed as argument

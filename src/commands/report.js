@@ -1,3 +1,5 @@
+import { currentWorkingDirectory } from "../../index.js";
+
 export const reportFunction = () => {
 
     // Create empty array for data of todo.txt
