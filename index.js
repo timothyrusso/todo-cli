@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Requiring module
 import * as fs from 'fs';
 
