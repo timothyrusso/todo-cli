@@ -1,13 +1,7 @@
 #!/usr/bin/env node
 
 import * as fs from 'fs';
-
-import { infoFunction } from './src/commands/info.js';
-import { listFunction } from './src/commands/list.js';
-import { addFunction } from './src/commands/add.js';
-import { deleteFunction } from './src/commands/delete.js';
-import { doneFunction } from './src/commands/done.js';
-import { reportFunction } from './src/commands/report.js';
+import { prompt } from './src/prompt/prompt.js';
 
 // Accessing arguments
 export const args = process.argv;
@@ -25,42 +19,4 @@ if (fs.existsSync(currentWorkingDirectory + 'done.txt') === false) {
     createStream.end();
 }
 
-switch (args[2]) {
-    case 'add': {
-        addFunction();
-        break;
-    }
-
-    case 'ls': {
-        listFunction();
-        break;
-    }
-
-    case 'del': {
-        deleteFunction();
-        break;
-    }
-
-    case 'done': {
-        doneFunction();
-        break;
-    }
-
-    case 'help': {
-        infoFunction();
-        break;
-    }
-
-    case 'report': {
-        reportFunction();
-        break;
-    }
-
-    default: {
-        infoFunction();
-        // We will display help when no
-        // argument is passed or invalid
-        // argument is passed
-    }
-}
-
+prompt

@@ -4,26 +4,20 @@ import gradient from "gradient-string";
 
 export const infoFunction = () => {
     const UsageText = `
-    ${pc.bold(gradient.pastel('---USAGE---'))}
+    ${pc.bold(gradient.pastel('---COMMANDS---'))}
 
-        ${pc.blue('Add a new todo')}
-        $ node index.js add "todo item"
+        ${pc.blue('Add new task:')} ${pc.bold('ADD')}
 
-        ${pc.green('Show remaining todos')}
-        $ node index.js ls
+        ${pc.green('Show remaining tasks:')} ${pc.bold('LIST')}
 
-        ${pc.red('Delete a todo')}
-        $ node index.js del NUMBER
+        ${pc.red('Delete a todo:')} ${pc.bold('REMOVE number')}
 
-        ${pc.magenta('Complete a todo')}
-        $ node index.js done NUMBER
+        ${pc.magenta('Complete a todo:')} ${pc.bold('DONE number')}
 
-        ${pc.yellow('Show usage')}
-        $ npm run start
+        ${pc.yellow('Show usage:')} ${pc.bold('INFO')}
 
-        ${pc.cyan('Statistics')}
-        $ node index.js report
+        ${pc.cyan('Statistics:')} ${pc.bold('REPORT')}
         `;
 
-    console.log(boxen(UsageText, {padding: 0, borderStyle: 'round', width: 40, textAlignment: 'center', margin: 1}));
+    console.log(boxen(UsageText, {padding: 0, borderStyle: 'round', width: 35, textAlignment: 'center', margin: 1}));
 };

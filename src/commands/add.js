@@ -1,11 +1,7 @@
 import * as fs from 'fs';
-import { args } from "../../index.js";
 import { currentWorkingDirectory } from "../../index.js";
 
-export const addFunction = () => {
-
-    // New todo string argument is stored
-    const newTask = args[3];
+export const addFunction = (newTask) => {
 
     // If argument is passed
     if (newTask) {
