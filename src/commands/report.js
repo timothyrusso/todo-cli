@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import { currentWorkingDirectory } from "../../index.js";
 
 export const reportFunction = () => {

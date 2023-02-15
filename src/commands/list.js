@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import boxen from "boxen";
 import { currentWorkingDirectory } from "../../index.js";
 
 export const listFunction = () => {
@@ -19,16 +21,12 @@ export const listFunction = () => {
         return value !== '';
     });
 
-    let pendingTodos = chalk.green(`
-    There are no pending todos!
-    `)
-
     if (filterData.length === 0) {
-        console.log(pendingTodos);
+        console.log('There are no pending todos!');
     }
 
     for (let i = 0; i < filterData.length; i++) {
-        console.log((filterData.length - i) + '. '
-            + filterData[i]);
+        console.log(boxen((filterData.length - i) + '. '
+            +  filterData[i], {padding: 1, margin: 0, borderStyle: 'double', borderColor: 'green', borderStyle: 'classic', width: 50}));
     }
 };
