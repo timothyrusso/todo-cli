@@ -6,30 +6,85 @@ import { addFunction } from '../commands/add.js';
 import { deleteFunction } from '../commands/delete.js';
 import { doneFunction } from '../commands/done.js';
 import { reportFunction } from '../commands/report.js';
+import { taskList } from '../helpers/taskList.js';
 
 const addInput = () => inquirer
-.prompt([
-  {
-    type: 'input',
-    name: 'add',
-    message: 'Insert your task: '
-  },
-])
-.then(answers => addFunction(answers.add));
+    .prompt([
+        {
+            type: 'input',
+            name: 'add',
+            message: 'Insert your task: '
+        },
+    ])
+    .then(answers => addFunction(answers.add));
 
-export const prompt = inquirer
+const deleteInput = () => {
+    if (taskList().length > 0) {
+        inquirer
+            .prompt([
+                {
+                    type: 'list',
+                    name: 'remove',
+                    message: 'What do you want to remove?',
+                    choices: taskList(),
+                    filter(val) {
+                        return val.toLowerCase();
+                    },
+                }
+            ]).then(answers => {
+                let index = checkIndex(taskList().reverse(), answers.remove)
+                deleteFunction(index)
+            })
+    } else {
+        console.log('There are no tasks to delete!')
+    }
+}
+
+const doneInput = () => {
+    if (taskList().length > 0) {
+        inquirer
+            .prompt([
+                {
+                    type: 'list',
+                    name: 'done',
+                    message: 'What task do you have completed?',
+                    choices: taskList(),
+                    filter(val) {
+                        return val.toLowerCase();
+                    },
+                }
+            ]).then(answers => {
+                let index = checkIndex(taskList().reverse(), answers.done)
+                doneFunction(index)
+            })
+    } else {
+        console.log('You have completed all the tasks!')
+    }
+}
+
+const checkIndex = (array, answer) => {
+    let deleteIndex = 0;
+    array.forEach((element, index) => {
+        if (element.toLowerCase() === answer) {
+            deleteIndex = index + 1
+        }
+    })
+    return deleteIndex
+}
+
+export const prompt = () => inquirer
     .prompt([
         {
             type: 'list',
             name: 'action',
             message: 'What do you want to do?',
             choices: [
-                'Add',
-                'Remove',
-                'Done',
-                'List',
-                'Info',
-                'Report',
+                'ADD',
+                'REMOVE',
+                'DONE',
+                'LIST',
+                'INFO',
+                'REPORT',
             ],
             filter(val) {
                 return val.toLowerCase();
@@ -49,12 +104,12 @@ export const prompt = inquirer
             }
 
             case 'remove': {
-                deleteFunction();
+                deleteInput()
                 break;
             }
 
             case 'done': {
-                doneFunction();
+                doneInput();
                 break;
             }
 
@@ -77,4 +132,3 @@ export const prompt = inquirer
         }
         return 'action completed'
     })
-

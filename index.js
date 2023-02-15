@@ -19,4 +19,4 @@ if (fs.existsSync(currentWorkingDirectory + 'done.txt') === false) {
     createStream.end();
 }
 
-prompt
+prompt()

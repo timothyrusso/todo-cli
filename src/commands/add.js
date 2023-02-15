@@ -3,6 +3,8 @@ import { currentWorkingDirectory } from "../../index.js";
 
 export const addFunction = (newTask) => {
 
+    let hash = (Math.random() + 1).toString(36).substring(2);
+
     // If argument is passed
     if (newTask) {
 
@@ -18,7 +20,7 @@ export const addFunction = (newTask) => {
         // New task is added to previous data
         fs.writeFile(
             currentWorkingDirectory + 'todo.txt',
-            newTask + '\n' + fileData,
+            newTask + '   ###hash-' + hash + '\n' + fileData,
 
             function (err) {
 

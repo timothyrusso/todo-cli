@@ -1,11 +1,7 @@
 import * as fs from 'fs';
-import { args } from "../../index.js";
 import { currentWorkingDirectory } from "../../index.js";
 
-export const doneFunction = () => {
-
-    // Store the index passed as argument
-    const doneIndex = args[3];
+export const doneFunction = (doneIndex) => {
 
     // If argument is passed
     if (doneIndex) {

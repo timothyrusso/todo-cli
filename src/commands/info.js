@@ -10,9 +10,9 @@ export const infoFunction = () => {
 
         ${pc.green('Show remaining tasks:')} ${pc.bold('LIST')}
 
-        ${pc.red('Delete a todo:')} ${pc.bold('REMOVE number')}
+        ${pc.red('Delete a todo:')} ${pc.bold('REMOVE')}
 
-        ${pc.magenta('Complete a todo:')} ${pc.bold('DONE number')}
+        ${pc.magenta('Complete a todo:')} ${pc.bold('DONE')}
 
         ${pc.yellow('Show usage:')} ${pc.bold('INFO')}
 

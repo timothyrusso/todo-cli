@@ -1,11 +1,7 @@
 import * as fs from 'fs';
-import { args } from "../../index.js";
 import { currentWorkingDirectory } from "../../index.js";
 
-export const deleteFunction = () => {
-
-    // Store which index is passed
-    const deleteIndex = args[3];
+export const deleteFunction = (deleteIndex) => {
 
     // If index is passed
     if (deleteIndex) {
