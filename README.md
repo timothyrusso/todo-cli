@@ -1,5 +1,7 @@
 # todo-cli
 
+![image](https://user-images.githubusercontent.com/85668106/219629187-f1a19c8b-1d09-4259-824b-830c1ab6bcbb.png)
+
 ## Description
 
 This is a command line tool where you can add, remove and see some statistics about your tasks.
