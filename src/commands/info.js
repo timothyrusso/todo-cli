@@ -1,6 +1,7 @@
 import boxen from "boxen";
 import pc from "picocolors";
 import gradient from "gradient-string";
+import { prompt } from "../prompt/prompt.js";
 
 export const infoFunction = () => {
     const UsageText = `
@@ -20,4 +21,6 @@ export const infoFunction = () => {
         `;
 
     console.log(boxen(UsageText, {padding: 0, borderStyle: 'round', width: 35, textAlignment: 'center', margin: 1}));
+
+    prompt();
 };
