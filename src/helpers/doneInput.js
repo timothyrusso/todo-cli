@@ -1,6 +1,7 @@
 import inquirer from "inquirer";
 import { taskList } from "./taskList.js";
 import { checkIndex } from "./checkIndex.js";
+import { doneFunction } from "../commands/done.js";
 
 export const doneInput = () => {
     if (taskList().length > 0) {
