@@ -13,3 +13,10 @@ This is a command line tool where you can add, remove and see some statistics ab
 3. Run the application ```node index.js``` inside the folder of the project
 
 Important: You will need Node.js installed in your machine.
+
+## Dependencies
+
+[inquirer](https://github.com/SBoudrias/Inquirer.js)
+[picocolors](https://github.com/alexeyraspopov/picocolors)
+[boxen](https://github.com/sindresorhus/boxen)
+[gradient-string](https://github.com/bokub/gradient-string)
