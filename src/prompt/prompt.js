@@ -1,4 +1,5 @@
 import inquirer from 'inquirer';
+import pc from "picocolors";
 
 import { infoFunction } from '../commands/info.js';
 import { listFunction } from '../commands/list.js';
@@ -60,16 +61,12 @@ export const prompt = () => inquirer
             }
 
             case 'exit': {
-                console.log('Good bye!');
+                console.log(`${pc.blue('Bye bye 👋')}`);
                 break;
             }
 
             default: {
                 infoFunction();
-                // We will display help when no
-                // argument is passed or invalid
-                // argument is passed
             }
         }
-        return 'action completed'
     })
