@@ -2,6 +2,7 @@ import inquirer from "inquirer";
 import { taskList } from "./taskList.js";
 import { deleteFunction } from "../commands/delete.js";
 import { checkIndex } from "./checkIndex.js";
+import { prompt } from "../prompt/prompt.js";
 
 export const deleteInput = () => {
     if (taskList().length > 0) {
@@ -21,6 +22,7 @@ export const deleteInput = () => {
                 deleteFunction(index)
             })
     } else {
-        console.log('There are no tasks to delete!')
+        console.log('There are no tasks to delete!');
+        prompt();
     }
 }

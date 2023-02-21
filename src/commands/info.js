@@ -18,6 +18,8 @@ export const infoFunction = () => {
         ${pc.yellow('Show usage:')} ${pc.bold('INFO')}
 
         ${pc.cyan('Statistics:')} ${pc.bold('REPORT')}
+
+        ${pc.cyan('Exit:')} ${pc.bold('EXIT')}
         `;
 
     console.log(boxen(UsageText, {padding: 0, borderStyle: 'round', width: 35, textAlignment: 'center', margin: 1}));

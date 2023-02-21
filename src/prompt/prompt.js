@@ -20,6 +20,7 @@ export const prompt = () => inquirer
                 'LIST',
                 'INFO',
                 'REPORT',
+                'EXIT'
             ],
             filter(val) {
                 return val.toLowerCase();
@@ -55,6 +56,11 @@ export const prompt = () => inquirer
 
             case 'report': {
                 reportFunction();
+                break;
+            }
+
+            case 'exit': {
+                console.log('Good bye!');
                 break;
             }
 

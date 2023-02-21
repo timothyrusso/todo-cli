@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { currentWorkingDirectory } from "../../index.js";
+import { prompt } from '../prompt/prompt.js';
 
 export const addFunction = (newTask) => {
 
@@ -7,9 +8,6 @@ export const addFunction = (newTask) => {
 
     // If argument is passed
     if (newTask) {
-
-        // Create a empty array
-        let data = [];
 
         // Read the data from file todo.txt and
         // convert it in string
@@ -29,11 +27,13 @@ export const addFunction = (newTask) => {
 
                 // Logs the new task added
                 console.log('Added todo: "' + newTask + '"');
+                prompt();
             },
         );
     } else {
 
         // If argument was no passed
         console.log('Error: Missing todo string. Nothing added!');
+        prompt();
     }
 };

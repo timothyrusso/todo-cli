@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { currentWorkingDirectory } from "../../index.js";
+import { prompt } from '../prompt/prompt.js';
 
 export const doneFunction = (doneIndex) => {
 
@@ -38,6 +39,7 @@ export const doneFunction = (doneIndex) => {
         if (doneIndex > filterData.length || doneIndex <= 0) {
             console.log('Error: todo #'
                 + doneIndex + ' does not exist.');
+            prompt();
         } else {
 
             // Delete the task from todo.txt
@@ -67,6 +69,7 @@ export const doneFunction = (doneIndex) => {
                     if (err) throw err;
                     console.log('Marked todo #'
                         + doneIndex + ' as done.');
+                    prompt();
                 },
             );
         }
@@ -75,5 +78,6 @@ export const doneFunction = (doneIndex) => {
         // If argument was not passed
         console.log('Error: Missing NUMBER for'
             + ' marking todo as done.');
+        prompt();
     }
 };

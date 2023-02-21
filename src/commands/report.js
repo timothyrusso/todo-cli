@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { currentWorkingDirectory } from "../../index.js";
+import { prompt } from '../prompt/prompt.js';
 
 export const reportFunction = () => {
 
@@ -44,4 +45,6 @@ export const reportFunction = () => {
         filterDoneData.length,
         // Log the stats calculated
     );
+
+    prompt();
 };

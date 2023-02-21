@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { currentWorkingDirectory } from "../../index.js";
+import { prompt } from '../prompt/prompt.js';
 
 export const deleteFunction = (deleteIndex) => {
 
@@ -29,6 +30,7 @@ export const deleteFunction = (deleteIndex) => {
                 'Error: todo #' + deleteIndex
                 + ' does not exist. Nothing deleted.',
             );
+            prompt();
         } else {
 
             // Remove the task
@@ -46,6 +48,7 @@ export const deleteFunction = (deleteIndex) => {
 
                     // Logs the deleted index
                     console.log('Deleted todo #' + deleteIndex);
+                    prompt();
                 },
             );
         }
@@ -54,5 +57,6 @@ export const deleteFunction = (deleteIndex) => {
         // Index argument was no passed
         console.log(
             'Error: Missing NUMBER for deleting todo.');
+        prompt();
     }
 };

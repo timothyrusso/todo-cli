@@ -2,6 +2,7 @@ import inquirer from "inquirer";
 import { taskList } from "./taskList.js";
 import { checkIndex } from "./checkIndex.js";
 import { doneFunction } from "../commands/done.js";
+import { prompt } from "../prompt/prompt.js";
 
 export const doneInput = () => {
     if (taskList().length > 0) {
@@ -22,5 +23,6 @@ export const doneInput = () => {
             })
     } else {
         console.log('You have completed all the tasks!')
+        prompt();
     }
 }
